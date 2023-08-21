@@ -1,0 +1,27 @@
+<?php
+
+return array (
+  'add' => 'إضافة',
+  'add_company_admin' => 'إضافة مدير شركة',
+  'approve' => 'موافقة',
+  'assign_tourguide' => 'تعيين مرشد سياحي',
+  'close' => 'إغلاق',
+  'edit' => 'تعديل',
+  'edit_company_admin' => 'تعديل مدير شركة',
+  'export' => 'تصدير',
+  'favourite' => 'مفضلة',
+  'import' => 'استيراد',
+  'import_password_hint' => 'إذا تركت هذا الحقل فارغًا ، فسيكون كلمة المرور هي "password"',
+  'new_chat' => 'محادثة جديدة',
+  'password' => 'كلمة المرور',
+  'password_hint' => 'يجب أن تكون على الأقل :min أحرف',
+  'rate' => 'تقييم',
+  'recommend' => 'توصية',
+  'reject' => 'رفض',
+  'remove' => 'حذف',
+  'select' => 'اختيار',
+  'send' => 'إرسال',
+  'unassign' => 'إلغاء التعيين',
+  'unfavourite' => 'إلغاء المفضلة',
+  'unrecommend' => 'إلغاء التوصية',
+);
