@@ -6,7 +6,7 @@
     <section class="bg-gray-100">
         <div class="container mx-auto lg:px-10">
             <div class="mx-auto grid lg:grid-cols-2 lg:gap-20 md:grid-cols-1 py-32">
-                <div class="col-span-1 lg:px-0 px-8 pt-20">
+               <!-- <div class="col-span-1 lg:px-0 px-8 pt-20">
                     <h1 class="text-5xl font-bold text-gray-500">{{ __('frontend.contact_us') }}</h1>
                     <p class="text-gray-500 mt-4 mb-4">{{ __('frontend.contact_us_description') }}</p>
                     <p class="text-gray-800 mb-2"><span
@@ -16,9 +16,9 @@
                             class="font-bold text-gray-500">{{ __('frontend.phone') }}:</span> +2 251 866 77 - 010 504
                         801 88</p>
                     <p class="text-gray-800 mb-2"><span
-                            class="font-bold text-gray-500">{{ __('frontend.address') }}:</span> 5 Building Street 295,
+                            class="font-bold text-gray-500">{{ __('frontend.address') }}:</span> 5 Building Street 292,
                         New Maadi, Cairo, Egypt</p>
-                </div>
+                </div>-->
                 <div class="col-span-1 px-8 bg-white rounded-xl drop-shadow-lg">
                     <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
                         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"

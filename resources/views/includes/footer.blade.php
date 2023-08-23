@@ -12,7 +12,7 @@
         <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
             <div class="col-span-2">
                 <div class="flex flex-col justify-center">
-                    <h1 class="text-3xl font-bold text-gray-600">{{ $subscribe?->contents()?->latest()?->first()->title }}</h1>
+                    <p class="text-3xl font-bold text-gray-600">{{ $subscribe?->contents()?->latest()?->first()->title }}</p>
                     <p class="text-gray-600 mt-4">{{ $subscribe?->contents()?->latest()?->first()->content }}</p>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                             ]) placeholder="{{ __('frontend.enter_an_email') }}">
                     <button type="submit"
                             @class([
-                                'bg-gray-500 text-white lg:px-4 px-2 py-2.5 hover:bg-blue-600 sm:w-[32%]',
+                                'bg-gray-500 text-white lg:px-4 px-2 py-2.5 hover:bg-gray-700 sm:w-[32%]',
                                 'rounded-tr-lg rounded-br-lg' => app()->getLocale() === 'en',
                                 'rounded-tl-lg rounded-bl-lg' => app()->getLocale() === 'ar',
                             ])>
@@ -105,6 +105,9 @@
                             <path
                                 d="M0 120c0-33.334 11.667-60.834 35-82.5C58.333 15.833 88.667 5 126 5c36.667 0 66.333 10.666 89 32 23.333 22 35 50.666 35 86 0 32-11.333 58.666-34 80-23.333 22-54 33-92 33h-1c-36.667 0-66.333-11-89-33S0 153.333 0 120zm13 875V327h222v668H13zm345 0h222V622c0-23.334 2.667-41.334 8-54 9.333-22.667 23.5-41.834 42.5-57.5 19-15.667 42.833-23.5 71.5-23.5 74.667 0 112 50.333 112 151v357h222V612c0-98.667-23.333-173.5-70-224.5S857.667 311 781 311c-86 0-153 37-201 111v2h-1l1-2v-95H358c1.333 21.333 2 87.666 2 199 0 111.333-.667 267.666-2 469z"></path>
                         </svg>
+                    </a>
+                    <a href="https://web.whatsapp.com/send?phone=+201050480188" src="WhatsAppButtonGreenLarge.svg" class="mr-4">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 inline fill-current text-white" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/> </svg>
                     </a>
                 </div>
             </div>
@@ -187,7 +190,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                   d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
                         </svg>
+                        <a href="https://goo.gl/maps/bwVjQ57ggTc5PAH46" target="_blank">
                         <span>{{ $footer?->contents()->firstWhere('name->' . app()->getLocale(), 'footer_contact_info_address')?->content }}</span>
+                        </a>
                     </li>
                 </ul>
             </div>

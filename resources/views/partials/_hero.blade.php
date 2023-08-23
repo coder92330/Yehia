@@ -111,7 +111,7 @@
                                         ]) placeholder="{{ __('frontend.to') }}">
                                 <button type="submit"
                                     @class([
-                                        "absolute bottom-2.5 px-4 py-1.5 text-sm font-medium text-white bg-blue-600 rounded-full hover:bg-blue-500 focus:outline-none focus:bg-blue-500",
+                                        "absolute bottom-2.5 px-4 py-1.5 text-sm font-medium text-white bg-gray-500 rounded-full hover:bg-gray-700 focus:outline-none focus:bg-gray-700",
                                         "right-2.5" => app()->getLocale() === 'en',
                                         "left-2.5" => app()->getLocale() === 'ar',
                                     ])>
