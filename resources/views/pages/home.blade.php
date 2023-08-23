@@ -283,7 +283,15 @@
     .relative .py-4.mb-8.lg\:h-\[10rem\].md\:h-\[20rem\].h-\[20rem\]{
         margin-top: .75rem;
     }
-    
+    .text-center.mt-4{
+        min-height: 72px;
+    }
+    .grid .flex.flex-col.justify-center.items-center{
+        display: inline-block;
+    }
+    .rounded-full.bg-white.w-24.h-24.flex.justify-center.items-center{
+        margin: 0 auto;
+    }
 </style>
 @endpush
 
