@@ -5,12 +5,13 @@
     {{-- Map Content --}}
     <section style="height: 30rem">
         <!--https://www.google.com/maps/embed/v1/place?key=AIzaSyAXiZips25sPg3rb_BO_yVlZBmTXB_9ONo&q=29.979225158691406,31.28079605102539&zoom=20-->
-        <iframe
+        <img src="{{ asset('images/guides-navigator-contact-us.jpg') }}" alt="Contact Image" class="w-full h-full object-cover">
+        <!--<iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d432.0007828128315!2d31.280633931587204!3d29.979250021655638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458397fd7bbdeb5%3A0x6200ece7e59cd2e3!2sGuides%20Navigator!5e0!3m2!1sen!2seg!4v1692404331724!5m2!1sen!2seg"
             width="100%"
             height="100%"
             loading="lazy">
-        </iframe>
+        </iframe>-->
         
     </section>
 
@@ -93,7 +94,17 @@
 
                 </div>
                 <div class="col-span-1">
-                    <img src="{{ asset('images/guides-navigator-contact-us.jpg') }}" alt="Contact Image" class="w-full h-full object-cover">
+                        <section style="height: 100%">
+        <!--https://www.google.com/maps/embed/v1/place?key=AIzaSyAXiZips25sPg3rb_BO_yVlZBmTXB_9ONo&q=29.979225158691406,31.28079605102539&zoom=20-->
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d432.0007828128315!2d31.280633931587204!3d29.979250021655638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458397fd7bbdeb5%3A0x6200ece7e59cd2e3!2sGuides%20Navigator!5e0!3m2!1sen!2seg!4v1692404331724!5m2!1sen!2seg"
+            width="100%"
+            height="100%"
+            loading="lazy">
+        </iframe>
+        
+    </section>
+                   <!-- <img src="{{ asset('images/guides-navigator-contact-us.jpg') }}" alt="Contact Image" class="w-full h-full object-cover">-->
                 </div>
             </div>
         </div>

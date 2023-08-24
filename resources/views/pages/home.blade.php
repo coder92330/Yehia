@@ -29,9 +29,9 @@
                         </div>
                         <div class="px-8 py-4 mb-8 lg:h-[10rem] md:h-[20rem] h-[20rem]">
                             <h1 class="text-3xl text-gray-500 font-bold mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_tourguide')->title }}</h1>
-                            <p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_tourguide')->content }}</p>
+                            <!--<p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_tourguide')->content }}</p>-->
                             <a href="{{ route('tour-guide.auth.login') }}"
-                               class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full w-[calc(100%-4rem)]">
+                               class="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded-full w-[calc(100%-4rem)]">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                      class="w-5 h-5 inline-block">
                                     <path fill-rule="evenodd"
@@ -50,9 +50,9 @@
                         </div>
                         <div class="px-6 py-4 mb-8 lg:h-[10rem] md:h-[20rem] h-[20rem]">
                             <h1 class="text-3xl text-gray-500 font-bold mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_ourservice')->title }}</h1>
-                            <p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_ourservice')->content }}</p>
+                            <!--<p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_ourservice')->content }}</p>-->
                             <a href="#services"
-                               class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full w-[calc(100%-4rem)]">
+                               class="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded-full w-[calc(100%-4rem)]">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -71,9 +71,9 @@
                         </div>
                         <div class="px-6 py-4 mb-8 lg:h-[10rem] md:h-[20rem] h-[20rem]">
                             <h1 class="text-3xl text-gray-500 font-bold mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_agent')->title }}</h1>
-                            <p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_agent')->content }}</p>
+                            <!--<p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_agent')->content }}</p>-->
                             <a href="{{ route('agent.auth.login') }}"
-                               class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full w-[calc(100%-4rem)]">
+                               class="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded-full w-[calc(100%-4rem)]">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                      class="w-5 h-5 inline-block">
                                     <path fill-rule="evenodd"
@@ -292,8 +292,28 @@
     .rounded-full.bg-white.w-24.h-24.flex.justify-center.items-center{
         margin: 0 auto;
     }
+    
+    @media (min-width: 1024px) {
+  .max-w-sm.overflow-hidden.shadow-lg.rounded-xl.bg-white {
+  height: 24rem;
+}
+}
+
+@media (min-width: 768px){
+      .max-w-sm.overflow-hidden.shadow-lg.rounded-xl.bg-white {
+  height: 24rem;
+}
+}
+.bg-gray-500.hover\:bg-gray-700.text-white.font-normal.py-2.px-4.rounded-full.w-\[calc\(100\%-4rem\)\]{
+    padding-bottom: .75rem;
+line-height: 2.5em;
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
 </style>
+
 @endpush
+
 
 @push('scripts')
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

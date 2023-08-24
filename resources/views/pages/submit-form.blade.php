@@ -5,7 +5,7 @@
 @section('content')
     <section class="bg-gray-100">
         <div class="container mx-auto lg:px-10">
-            <div class="mx-auto grid lg:grid-cols-2 lg:gap-20 md:grid-cols-1 py-32">
+            <div class="mx-auto grid lg:grid-cols-1 lg:gap-20 md:grid-cols-1 py-32 lg:px-64 md:px-8">
                <!-- <div class="col-span-1 lg:px-0 px-8 pt-20">
                     <h1 class="text-5xl font-bold text-gray-500">{{ __('frontend.contact_us') }}</h1>
                     <p class="text-gray-500 mt-4 mb-4">{{ __('frontend.contact_us_description') }}</p>
@@ -250,3 +250,17 @@
         </div>
     </section>
 @endsection
+
+
+@push('styles')
+<style>
+  @media (min-width: 1024px){
+.lg\:px-64 {
+  padding-left: 16rem;
+  padding-right: 16rem;
+}
+}
+</style>
+@endpush
+
+
