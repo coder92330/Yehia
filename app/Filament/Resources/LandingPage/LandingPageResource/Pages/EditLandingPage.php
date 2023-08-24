@@ -83,7 +83,7 @@ class EditLandingPage extends EditRecord
 
                     TextInput::make('content')
                         ->label(__('attributes.landing_page.content'))
-                        ->required()
+//                        ->required()
                         ->placeholder(__('attributes.landing_page.content')),
 
                     TextInput::make('button_text')

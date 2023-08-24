@@ -5,7 +5,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-10 items-center">
                     <div class="col-span-1 flex flex-col items-center justify-center">
                         <img src="{{ $record->avatar }}" alt="Your Image"
-                             class="relative lg:-bottom-14 lg:w-80 lg:h-80 md:w-64 md:h-64 h-64 w-64 rounded-full border-4 border-white shadow-lg">
+                             class="relative lg:-bottom-16 lg:w-[18rem] lg:h-[18rem] md:w-64 md:h-64 h-64 w-64 rounded-full border-4 border-white shadow-lg object-cover">
                     </div>
                     <div class="flex flex-col md:flex-row items-center col-span-3">
                         <div class="flex flex-col space-y-3 w-full">

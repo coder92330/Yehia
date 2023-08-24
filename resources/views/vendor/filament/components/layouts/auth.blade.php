@@ -33,7 +33,7 @@
         <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
             <div class="mx-auto max-w-lg text-center">
                 <h1 class="text-4xl font-bold tracking-tight text-center text-purple-dark">{{ __('frontend.signInGuidesNavigator') }}</h1>
-                <p class="text-lg text-center text-gray-400 mt-2">{{ __('frontend.signInGuidesNavigatorDescription', ['name' => $name]) }}</p>
+{{--                <p class="text-lg text-center text-gray-400 mt-2">{{ __('frontend.signInGuidesNavigatorDescription', ['name' => $name]) }}</p>--}}
             </div>
             <div {{ $attributes }} class="mx-auto mt-8 mb-0 max-w-md space-y-4">
                 {{ $slot }}

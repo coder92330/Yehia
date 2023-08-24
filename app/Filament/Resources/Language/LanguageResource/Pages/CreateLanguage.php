@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Language\LanguageResource\Pages;
 
 use App\Filament\Resources\Language\LanguageResource;
+use Filament\Pages\Actions\LocaleSwitcher;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateLanguage extends CreateRecord
@@ -16,7 +17,7 @@ class CreateLanguage extends CreateRecord
     protected function getActions(): array
     {
         return [
-            Actions\LocaleSwitcher::make(),
+            LocaleSwitcher::make(),
         ];
     }
 }

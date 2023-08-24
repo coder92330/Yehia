@@ -3,6 +3,11 @@
     $about_us      = $page->where('key', 'About Us')->first();
     $our_servicres = $page->where('key', 'Our Services')->first();
     $divider       = $page->where('key', 'Divider')->first();
+    $sliders       = [
+        'images/tourguide_login_section.jpg'   => 'tourguide',
+        'images/training_programs_section.jpg' => 'ourservice',
+        'images/agent_login_section.jpg'       => 'agent'
+        ];
 @endphp
 
 @extends('layouts.default')
@@ -21,69 +26,31 @@
             <div
                 class="flex flex-col justify-center items-center text-center w-full">
                 <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-                    <div class="max-w-sm overflow-hidden shadow-lg rounded-xl bg-white">
-                        <div class="w-full h-[50%]">
-                            <img class="w-full h-full object-cover"
-                                 src="{{ asset('images/tourguide_login_section.jpg') }}"
-                                 alt="{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_tourguide')->title }}">
+                    @foreach($sliders as $image => $sliderName)
+                        <div class="overflow-hidden shadow-lg rounded-xl bg-white h-auto">
+                            <div class="w-full lg:h-[50%] md:h-[45%] h-[40%]">
+                                <img class="w-full h-full object-cover"
+                                     src="{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), "slider_$sliderName")->slider ?? asset($image) }}"
+                                     alt="{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), "slider_$sliderName")->title }}">
+                            </div>
+                            <div class="px-8 py-4 lg:h-[50%] md:h-[55%] h-[60%] flex flex-col items-center justify-between gap-2">
+                                <h1 class="text-3xl text-gray-500 font-bold">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), "slider_$sliderName")->title }}</h1>
+                                @if($slider->contents()->firstWhere('name->' . app()->getLocale(), "slider_$sliderName")->content)
+                                    <p>{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), "slider_$sliderName")->content }}</p>
+                                @endif
+                                <a href="{{ $sliderName === 'tourguide' ? route('tour-guide.auth.login') : ($sliderName === 'agent' ? route('agent.auth.login') : '#services') }}"
+                                   class="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded-full mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                         class="w-5 h-5 inline-block">
+                                        <path fill-rule="evenodd"
+                                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z"
+                                              clip-rule="evenodd"/>
+                                    </svg>
+                                    {{ $slider->contents()->firstWhere('name->' . app()->getLocale(), "slider_$sliderName")->button_text }}
+                                </a>
+                            </div>
                         </div>
-                        <div class="px-8 py-4 mb-8 lg:h-[10rem] md:h-[20rem] h-[20rem]">
-                            <h1 class="text-3xl text-gray-500 font-bold mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_tourguide')->title }}</h1>
-                            <!--<p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_tourguide')->content }}</p>-->
-                            <a href="{{ route('tour-guide.auth.login') }}"
-                               class="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded-full w-[calc(100%-4rem)]">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                     class="w-5 h-5 inline-block">
-                                    <path fill-rule="evenodd"
-                                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z"
-                                          clip-rule="evenodd"/>
-                                </svg>
-                                {{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_tourguide')->button_text }}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="max-w-sm overflow-hidden shadow-lg rounded-xl bg-white">
-                        <div class="w-full h-[50%]">
-                            <img class="w-full h-full object-cover"
-                                 src="{{ asset('images/training_programs_section.jpg') }}"
-                                 alt="{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_ourservice')->title }}">
-                        </div>
-                        <div class="px-6 py-4 mb-8 lg:h-[10rem] md:h-[20rem] h-[20rem]">
-                            <h1 class="text-3xl text-gray-500 font-bold mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_ourservice')->title }}</h1>
-                            <!--<p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_ourservice')->content }}</p>-->
-                            <a href="#services"
-                               class="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded-full w-[calc(100%-4rem)]">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                          d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                                {{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_ourservice')->button_text }}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="max-w-sm overflow-hidden shadow-lg rounded-xl bg-white">
-                        <div class="w-full h-[50%]">
-                            <img class="w-full h-full object-cover" src="{{ asset('images/agent_login_section.jpg') }}"
-                                 alt="{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_agent')->title }}">
-                        </div>
-                        <div class="px-6 py-4 mb-8 lg:h-[10rem] md:h-[20rem] h-[20rem]">
-                            <h1 class="text-3xl text-gray-500 font-bold mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_agent')->title }}</h1>
-                            <!--<p class="text-gray-700 mb-6">{{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_agent')->content }}</p>-->
-                            <a href="{{ route('agent.auth.login') }}"
-                               class="bg-gray-500 hover:bg-gray-700 text-white font-normal py-2 px-4 rounded-full w-[calc(100%-4rem)]">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                     class="w-5 h-5 inline-block">
-                                    <path fill-rule="evenodd"
-                                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z"
-                                          clip-rule="evenodd"/>
-                                </svg>
-                                {{ $slider->contents()->firstWhere('name->' . app()->getLocale(), 'slider_agent')->button_text }}
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -272,45 +239,51 @@
 @push('styles')
     <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet"/>
     <style>
-    .mb-8.font-normal.text-center.text-gray-300.lg\:text-md.sm\:px-16.lg\:px-48 {
-  display: none;
-}
-    p.text-gray-700.mb-6{
-    opacity: 0;
-    margin-bottom: .2rem !important;
-    padding-bottom: .2rem !important;
-    }
-    .relative .py-4.mb-8.lg\:h-\[10rem\].md\:h-\[20rem\].h-\[20rem\]{
-        margin-top: .75rem;
-    }
-    .text-center.mt-4{
-        min-height: 72px;
-    }
-    .grid .flex.flex-col.justify-center.items-center{
-        display: inline-block;
-    }
-    .rounded-full.bg-white.w-24.h-24.flex.justify-center.items-center{
-        margin: 0 auto;
-    }
-    
-    @media (min-width: 1024px) {
-  .max-w-sm.overflow-hidden.shadow-lg.rounded-xl.bg-white {
-  height: 24rem;
-}
-}
+        .mb-8.font-normal.text-center.text-gray-300.lg\:text-md.sm\:px-16.lg\:px-48 {
+            display: none;
+        }
 
-@media (min-width: 768px){
-      .max-w-sm.overflow-hidden.shadow-lg.rounded-xl.bg-white {
-  height: 24rem;
-}
-}
-.bg-gray-500.hover\:bg-gray-700.text-white.font-normal.py-2.px-4.rounded-full.w-\[calc\(100\%-4rem\)\]{
-    padding-bottom: .75rem;
-line-height: 2.5em;
-padding-left: 1.5rem;
-padding-right: 1.5rem;
-}
-</style>
+        p.text-gray-700.mb-6 {
+            opacity: 0;
+            margin-bottom: .2rem !important;
+            padding-bottom: .2rem !important;
+        }
+
+        .relative .py-4.mb-8.lg\:h-\[10rem\].md\:h-\[20rem\].h-\[20rem\] {
+            margin-top: .75rem;
+        }
+
+        .text-center.mt-4 {
+            min-height: 72px;
+        }
+
+        .grid .flex.flex-col.justify-center.items-center {
+            display: inline-block;
+        }
+
+        .rounded-full.bg-white.w-24.h-24.flex.justify-center.items-center {
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            .max-w-sm.overflow-hidden.shadow-lg.rounded-xl.bg-white {
+                height: 24rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .max-w-sm.overflow-hidden.shadow-lg.rounded-xl.bg-white {
+                height: 24rem;
+            }
+        }
+
+        .bg-gray-500.hover\:bg-gray-700.text-white.font-normal.py-2.px-4.rounded-full.w-\[calc\(100\%-4rem\)\] {
+            padding-bottom: .75rem;
+            line-height: 2.5em;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    </style>
 
 @endpush
 

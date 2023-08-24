@@ -49,7 +49,7 @@ class HomeController extends Controller
     public function contactSubmit(ContactRequest $request)
     {
         try {
-            Mail::to(LandingPageKey::where('key', 'Footer')->first()->contents()->firstWhere('name', 'footer_contact_info_email')?->content)
+            Mail::to(LandingPageKey::where('key', 'Footer')->first()->contents()->firstWhere('name', 'footer_contact_info_email')?->content ?? 'info@guidesnavigator.com')
                 ->send(new ContactMail($request->safe()->all()));
             return redirect()->route('contact-us')->with('success', 'Your message has been sent!');
         } catch (\Exception $e) {
